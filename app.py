@@ -1,5 +1,5 @@
 def greet(name):
-    return f"Hello, {name}! Welcome to DevOps Lab."
+    return f"Hello, {name}! This is an automated CI/cd deployment."
 
 
 def welcome():
