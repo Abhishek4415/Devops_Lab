@@ -3,3 +3,5 @@ def greet(name):
 
 if __name__ == "__main__":
     print(greet("Student"))
+def exit():
+    return "exit from main branch!"
