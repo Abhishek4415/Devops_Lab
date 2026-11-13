@@ -1,0 +1,21 @@
+* 39f1a2a update test_app application greeting
+* d24b04d update application greeting
+* 845d2a6 Automate application deployment using jenkis
+* e2bfeec add declarative jenkins pipeline
+* 841cde9 add declarative jenkins pipeline
+* 51144ee add application test cases
+*   5b145e8 Merge branch 'main' of https://github.com/Abhishek4415/Devops_Lab
+|\  
+| * d93c849 Delete Jenkinsfile
+| * 752cc16 Delete app.py
+| * 4a11db5 Add README with project details and objectives
+| * 27ea359 Add Jenkins pipeline for build, test, and deploy
+| * 794a3d2 Update app.py
+| * a1e890d Create app.py
+*   444af50 resolve merge conflict
+|\  
+| * e720881 print welcome
+| * ed7070c Add welcome function
+* | 0cc64c7 add exit function
+|/  
+* 8776129 Initial commit: Add Python application

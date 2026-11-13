@@ -1,0 +1,60 @@
+==============================
+EXPERIMENT 1: GIT INSTALLATION
+==============================
+
+sudo apt update
+sudo apt install git -y
+git --version
+git config --global user.name "Abhishek4415"
+git config --global user.email "siyaabhi441@gmail.com"
+git config --global --list
+
+==============================
+EXPERIMENT 2: GIT VERSION CONTROL
+==============================
+
+git init
+git status
+git add app.py
+git commit -m "Initial commit"
+git branch feature
+git switch feature
+git switch main
+git merge feature
+git log --oneline --all --graph
+git remote add origin REPOSITORY_URL
+git push -u origin main
+
+==============================
+EXPERIMENT 3: JENKINS
+==============================
+
+java -version
+sudo apt install jenkins -y
+sudo systemctl enable jenkins
+sudo systemctl start jenkins
+sudo systemctl status jenkins
+
+==============================
+EXPERIMENT 4: PIPELINE
+==============================
+
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+pytest -v
+deactivate
+
+git add .
+git commit -m "Add Jenkinsfile"
+git push origin main
+
+==============================
+EXPERIMENT 5: DEPLOYMENT
+==============================
+
+git add Jenkinsfile
+git commit -m "Automate application deployment"
+git push origin main
+
+sudo ls /var/lib/jenkins/workspace/DevOps-Declarative-Pipeline/deployment/

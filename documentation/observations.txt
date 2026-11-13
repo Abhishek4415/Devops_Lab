@@ -1,0 +1,28 @@
+EXPERIMENT 1:
+Git was successfully installed and configured.
+Jenkins was installed and started successfully.
+
+EXPERIMENT 2:
+A Git repository was initialized.
+Files were staged and committed.
+Branches were created and merged.
+The repository was pushed to GitHub.
+
+EXPERIMENT 3:
+A Jenkins Freestyle job was configured.
+Jenkins fetched source code from GitHub.
+The automated build completed successfully.
+
+EXPERIMENT 4:
+A declarative Jenkins pipeline was created.
+Build, Test and Deploy stages were executed.
+Automated tests passed successfully.
+
+EXPERIMENT 5:
+Application deployment was automated.
+Build triggers and post-build actions were configured.
+Deployment artifacts were generated successfully.
+
+EXPERIMENT 6:
+All commands, configurations, screenshots,
+commit history and observations were documented.

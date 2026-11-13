@@ -1,0 +1,44 @@
+JENKINS PIPELINE CONFIGURATION
+
+Project Name:
+DevOps-Declarative-Pipeline
+
+Source Code Management:
+GitHub
+
+Branch:
+main
+
+Pipeline Type:
+Declarative Pipeline
+
+Script Path:
+Jenkinsfile
+
+Build Trigger:
+Poll SCM
+
+Schedule:
+H/2 * * * *
+
+PIPELINE STAGES:
+
+1. BUILD
+- Create Python virtual environment.
+- Install dependencies.
+- Check application syntax.
+
+2. TEST
+- Execute automated test cases.
+- Verify application functionality using pytest.
+
+3. DEPLOY
+- Create deployment folder.
+- Copy app.py into deployment folder.
+
+POST-BUILD ACTIONS:
+
+- Archive deployment artifacts.
+- Display success message.
+- Display failure message.
+- Execute final pipeline notification.
