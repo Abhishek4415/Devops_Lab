@@ -10,7 +10,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                echo 'Starting Build Stage'
+                echo 'Building Application'
 
                 bat '''
                     echo Checking Python version
@@ -34,7 +34,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                echo 'Starting Test Stage'
+                echo 'Testing Application'
 
                 bat '''
                     .venv\\Scripts\\python.exe -m pytest -v
@@ -44,14 +44,14 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                echo 'Starting Deployment Stage'
+                echo 'Deploying Application'
 
                 bat '''
                     if not exist deployment mkdir deployment
 
-                    copy app.py deployment\\app.py
+                    copy /Y app.py deployment\\app.py
 
-                    echo Application deployed successfully
+                    echo Deployment successful
                 '''
             }
         }
@@ -59,14 +59,14 @@ pipeline {
 
     post {
         success {
-            echo 'Pipeline executed successfully!'
+            echo 'Application deployed successfully!'
 
             archiveArtifacts artifacts: 'deployment/**',
                              allowEmptyArchive: false
         }
 
         failure {
-            echo 'Pipeline execution failed!'
+            echo 'Build or deployment failed!'
         }
 
         always {
