@@ -2,16 +2,32 @@
 pipeline {
     agent any
 
+    triggers {
+        pollSCM('H/2 * * * *')
+    }
+
     stages {
 
         stage('Build') {
             steps {
                 echo 'Starting Build Stage'
 
-                sh '''
-                    python3 -m venv .venv
-                    .venv/bin/pip install -r requirements.txt
-                    python3 -m py_compile app.py
+                bat '''
+                    echo Checking Python version
+
+                    "C:\\Users\\Abhishek\\AppData\\Local\\Programs\\Python\\Python312\\python.exe" --version
+
+                    echo Creating virtual environment
+
+                    "C:\\Users\\Abhishek\\AppData\\Local\\Programs\\Python\\Python312\\python.exe" -m venv .venv
+
+                    echo Installing dependencies
+
+                    .venv\\Scripts\\python.exe -m pip install -r requirements.txt
+
+                    echo Checking application syntax
+
+                    .venv\\Scripts\\python.exe -m py_compile app.py
                 '''
             }
         }
@@ -20,8 +36,8 @@ pipeline {
             steps {
                 echo 'Starting Test Stage'
 
-                sh '''
-                    .venv/bin/pytest -v
+                bat '''
+                    .venv\\Scripts\\python.exe -m pytest -v
                 '''
             }
         }
@@ -30,10 +46,12 @@ pipeline {
             steps {
                 echo 'Starting Deployment Stage'
 
-                sh '''
-                    mkdir -p deployment
-                    cp app.py deployment/
-                    echo "Application deployed successfully"
+                bat '''
+                    if not exist deployment mkdir deployment
+
+                    copy app.py deployment\\app.py
+
+                    echo Application deployed successfully
                 '''
             }
         }
@@ -42,6 +60,9 @@ pipeline {
     post {
         success {
             echo 'Pipeline executed successfully!'
+
+            archiveArtifacts artifacts: 'deployment/**',
+                             allowEmptyArchive: false
         }
 
         failure {
